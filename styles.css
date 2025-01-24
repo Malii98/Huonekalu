@@ -30,3 +30,19 @@ body {
     width: 500px;
     height: auto;
    }
+   .toimisto {
+    background-color: #e9e8e4;
+    width: fit-content;
+    color: black;
+    padding: 8px;
+    border-radius: 8px;
+   }
+   
+   .otsikko {
+    color: #3d5512;
+   }
+   .toimisto h1, .toimisto  h2, .toimisto h3 {
+    color: #3d5512;
+   }
+   
+  
