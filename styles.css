@@ -5,16 +5,15 @@ body {
   /*#section1 {background-image: url(images/sänky.jpg);padding-top: 50px;height: 500px; color: white;}*/
   #section2 {height: auto;min-height: 600px;color: #fff;background-color: #673ab7;padding-top: 0;}
   #section3 {padding-top:50px;height:1000px;color: #fff; background-color: #865D36; color: white; font-weight: bold; background-image: url(images/260758.jpg); background-size: cover; background-repeat: no-repeat;}
-  #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
-  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+  #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4; position: relative; height: 100%;}
+  #section42 {padding-top:50px;height:1000px;color: #fff; background-color: #009688;}
 
   #googleMap {
-    width: 100%; 
-    height: 300px; 
-    max-width: 600px;
-    float: right;
-    margin-right: 10px;
-    margin-top: -450px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
    }
 
    .navbar-brand img {
@@ -44,5 +43,4 @@ body {
    .toimisto h1, .toimisto  h2, .toimisto h3 {
     color: #3d5512;
    }
-   
   
