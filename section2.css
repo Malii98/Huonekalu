@@ -39,21 +39,12 @@
     width: 270px;
     height: 300px;
     overflow: hidden;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    pointer-events: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
 }
 
 #section2 .row {
@@ -61,10 +52,10 @@
     overflow-x: auto;
     flex-wrap: nowrap;
     padding: 0 40px;
+    max-height: 100%;
     display: flex;
     gap: 50px;
     justify-content: flex-start;
-    width: 100%;
 }
 
 #section2 .row:active {
@@ -78,21 +69,18 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 #section2 .row {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
-
 .section2-products-header {
-    margin-bottom: 30px;
-    text-align: center;
-    padding: 0 40px;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .section2-products-header a {
     color: white;
     text-decoration: underline;
     font-weight: bold;
-    font-size: 1.2em;
 }
 
 .product-link {
@@ -124,23 +112,36 @@
 }
 
 .section2-image {
-    flex: 4;
+    flex: 5;
     background-image: url('images/alex-konokh-qAyGe-JJb8U-unsplash\ 1.png');
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 800px;
+    position: relative;
 }
 
-.section2-image h1 {
+.section2-image::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.section2-image h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
     text-shadow: 2px 2px 4px black;
     font-size: 3em;
 }
 
 .section2-products {
-    flex: 6;
+    flex: 7;
     padding: 20px 0;
     background-color: darkslategray;
     overflow: hidden;
@@ -158,69 +159,117 @@
 }
 
 /* Media Queries */
+@media screen and (max-width: 1600px) {
+    .section2-image {
+        flex: 4;
+    }
+    .section2-products {
+        flex: 8;
+    }
+}
+
 @media screen and (max-width: 1340px) {
-    .section2-container {
-        flex-direction: row;
+    .section2-image {
+        flex: 3;
     }
-
-    .section2-image, .section2-products {
-        flex: 1;
-        width: 100%;
-        min-height: 400px;
+    .section2-products {
+        flex: 7;
     }
-
     #section2 .row {
         gap: 30px;
-        padding: 0 20px;
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .section2-image {
+        flex: 2;
+        min-height: 800px;
+    }
+    .section2-products {
+        flex: 5;
+    }
+    .product-card {
+        width: 280px;
+        height: 310px;
+    }
+    .product-image {
+        width: 250px;
+        height: 280px;
+    }
+    .product-info {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section2-image {
+        flex: 2;
+    }
+    .section2-products {
+        flex: 4;
+    }
+    .product-card {
+        width: 260px;
+        height: 290px;
+    }
+    .product-image {
+        width: 230px;
+        height: 260px;
+    }
+    .product-info {
+        width: 230px;
+    }
+    #section2 .row {
+        gap: 25px;
+        padding: 0 25px;
     }
 }
 
 @media screen and (max-width: 670px) {
-    .col-md-4 {
-        width: 250px;
+    .section2-image {
+        flex: 1;
     }
-
+    .section2-products {
+        flex: 3;
+    }
     .product-card {
         width: 250px;
         height: 280px;
     }
-
     .product-image {
         width: 220px;
         height: 250px;
     }
-
     .product-info {
         width: 220px;
     }
-
     #section2 .row {
         gap: 20px;
-        padding: 0 15px;
+        padding: 0 20px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .col-md-4 {
-        width: 200px;
+    .section2-image {
+        flex: 1;
     }
-
+    .section2-products {
+        flex: 2;
+    }
     .product-card {
-        width: 200px;
-        height: 230px;
+        width: 220px;
+        height: 250px;
     }
-
     .product-image {
-        width: 170px;
-        height: 200px;
+        width: 190px;
+        height: 220px;
     }
-
     .product-info {
-        width: 170px;
+        width: 190px;
     }
-
     #section2 .row {
         gap: 15px;
-        padding: 0 10px;
+        padding: 0 15px;
     }
-} 
+}
