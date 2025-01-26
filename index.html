@@ -54,10 +54,11 @@
       adipisci incidunt praesentium quod debitis atque voluptates, error, sapiente, inventore quas asperiores pariatur?
       Sed, quas reprehenderit?</p>
   </div>
-      <div id="section2" class="container-fluid">
+  <div id="section2" class="container-fluid">
     <div class="section2-container">
-      <!-- Background image part -->
+<!-- Background image part -->
       <div class="section2-image">
+        <h2></h2>
       </div>
       
 <!-- Products part -->
@@ -66,7 +67,7 @@
           <a href="#" class="product-link"><u>Suosituimmat tuotteet -  Syysmallisto</u></a>
         </div>
         <div class="row" style="max-height: 100%; overflow-x: auto; white-space: nowrap;">
-          <!-- Product Cards -->
+<!-- Product Card 1 -->
           <div class="col-md-4 col-sm-6" style="display: inline-block; float: none; white-space: normal;">
             <a href="#" class="product-link"><u>Joku tuote X - malli Y - Vuosi Z →</u></a>
             <div class="product-card">
@@ -78,7 +79,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deum voluptates erat, vitae tellus turid.</p>
             </div>
           </div>
-          <!-- Product Cards -->
+<!-- Product Card 2 -->
           <div class="col-md-4 col-sm-6" style="display: inline-block; float: none; white-space: normal;">
             <a href="#" class="product-link"><u>Joku tuote X - malli Y - Vuosi Z →</u></a>
             <div class="product-card">
@@ -90,7 +91,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deum voluptates erat, vitae tellus turid.</p>
             </div>
           </div>
-          <!-- Product Cards -->
+<!-- Product Card 3 -->
           <div class="col-md-4 col-sm-6" style="display: inline-block; float: none; white-space: normal;">
             <a href="#" class="product-link"><u>Joku tuote X - malli Y - Vuosi Z →</u></a>
             <div class="product-card">
@@ -102,7 +103,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deum voluptates erat, vitae tellus turid.</p>
             </div>
           </div>
-          <!-- Product Cards -->
+<!-- Product Card 4 -->
           <div class="col-md-4 col-sm-6" style="display: inline-block; float: none; white-space: normal;">
             <a href="#" class="product-link"><u>Joku tuote X - malli Y - Vuosi Z →</u></a>
             <div class="product-card">
@@ -123,31 +124,65 @@
     const sliderContent = document.querySelector('#section2 .row');
     let isDown = false;
     let startX;
+    let startY;
     let scrollLeft;
-  
+    let lastY;
+    let scrollMode = null; // Track which direction we're scrolling
+    const horizontalThreshold = 10;
+    const verticalThreshold = 10;
+
     slider.addEventListener('mousedown', (e) => {
       isDown = true;
       slider.classList.add('active');
       startX = e.pageX - slider.offsetLeft;
+      startY = e.pageY;
+      lastY = startY;
       scrollLeft = sliderContent.scrollLeft;
+      scrollMode = null; // Reset scroll mode on new click
     });
-  
+
     slider.addEventListener('mouseleave', () => {
       isDown = false;
       slider.classList.remove('active');
+      scrollMode = null;
     });
-  
+
     slider.addEventListener('mouseup', () => {
       isDown = false;
       slider.classList.remove('active');
+      scrollMode = null;
     });
-  
+
     slider.addEventListener('mousemove', (e) => {
       if(!isDown) return;
-      e.preventDefault();
+      
       const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      sliderContent.scrollLeft = scrollLeft - walk;
+      const y = e.pageY;
+      
+      // Calculate movements
+      const walkX = Math.abs(x - startX);
+      const walkY = Math.abs(y - lastY);
+      
+      // Determine scroll mode if not set
+      if (!scrollMode) {
+        if (walkX > horizontalThreshold && walkX > walkY) {
+          scrollMode = 'horizontal';
+        } else if (walkY > verticalThreshold && walkY > walkX) {
+          scrollMode = 'vertical';
+        }
+      }
+      
+      // Apply scrolling based on mode
+      if (scrollMode === 'horizontal') {
+        e.preventDefault();
+        const deltaX = x - startX;
+        sliderContent.scrollLeft = scrollLeft - deltaX * 3;
+      } else if (scrollMode === 'vertical') {
+        const deltaY = lastY - y;
+        window.scrollBy(0, deltaY / 2.5);
+      }
+      
+      lastY = y;
     });
   </script>
 <!-- End of section 2 -->
