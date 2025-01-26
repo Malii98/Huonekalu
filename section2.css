@@ -58,6 +58,10 @@
     justify-content: flex-start;
 }
 
+#section2 .row:active {
+    cursor: grabbing;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 #section2 .row::-webkit-scrollbar {
     display: none;
@@ -120,6 +124,14 @@
     overflow: hidden;
     display: flex;
     align-items: center;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.section2-products:active {
+    cursor: grabbing;
 }
 
 /* Media Queries */
