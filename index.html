@@ -54,12 +54,12 @@
       adipisci incidunt praesentium quod debitis atque voluptates, error, sapiente, inventore quas asperiores pariatur?
       Sed, quas reprehenderit?</p>
   </div>
-  <div id="section2" class="container-fluid">
+    <div id="section2" class="container-fluid">
     <div class="section2-container">
       <!-- Background image part -->
       <div class="section2-image">
       </div>
-
+      
       <!-- Products part -->
       <div class="section2-products">
         <div class="row" style="max-height: 100%; overflow-x: auto; white-space: nowrap;">
@@ -80,8 +80,7 @@
             <a href="#" class="product-link"><u>Joku tuote X - malli Y - Vuosi Z →</u></a>
             <div class="product-card">
               <div class="product-image">
-                <img src="images/beige-armchair-wooden-cabinet-minimalist-room_1271306-34041.webp" alt="Tuote 2"
-                  class="img-responsive">
+                <img src="images/beige-armchair-wooden-cabinet-minimalist-room_1271306-34041.webp" alt="Tuote 2" class="img-responsive">
               </div>
             </div>
             <div class="product-info">
@@ -93,8 +92,7 @@
             <a href="#" class="product-link"><u>Joku tuote X - malli Y - Vuosi Z →</u></a>
             <div class="product-card">
               <div class="product-image">
-                <img src="images/canal-furniture-tv-stand-entertainment-centers-montecarlo-tv-stand-14734731116637.webp"
-                  alt="Tuote 3" class="img-responsive">
+                <img src="images/canal-furniture-tv-stand-entertainment-centers-montecarlo-tv-stand-14734731116637.webp" alt="Tuote 3" class="img-responsive">
               </div>
             </div>
             <div class="product-info">
@@ -106,8 +104,7 @@
             <a href="#" class="product-link"><u>Joku tuote X - malli Y - Vuosi Z →</u></a>
             <div class="product-card">
               <div class="product-image">
-                <img src="images/class-8_b77f8a69-a077-4372-8e5a-8f97e60d977e.webp" alt="Tuote 4"
-                  class="img-responsive">
+                <img src="images/class-8_b77f8a69-a077-4372-8e5a-8f97e60d977e.webp" alt="Tuote 4" class="img-responsive">
               </div>
             </div>
             <div class="product-info">
@@ -118,7 +115,39 @@
       </div>
     </div>
   </div>
-  <!-- End of section 2 -->
+  <script>
+  const slider = document.querySelector('.section2-products');
+  const sliderContent = document.querySelector('#section2 .row');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = sliderContent.scrollLeft;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+    sliderContent.scrollLeft = scrollLeft - walk;
+  });
+</script>
+<!-- End of section 2 -->
   <div id="section3" class="container-fluid">
     <div class="toimisto">
       <h1 class="otsikko">Mistä löydät meidät</h1>
