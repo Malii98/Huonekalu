@@ -184,21 +184,9 @@
 @media screen and (max-width: 1024px) {
     .section2-image {
         flex: 2;
-        min-height: 800px;
     }
     .section2-products {
         flex: 5;
-    }
-    .product-card {
-        width: 280px;
-        height: 310px;
-    }
-    .product-image {
-        width: 250px;
-        height: 280px;
-    }
-    .product-info {
-        width: 250px;
     }
 }
 
@@ -208,17 +196,6 @@
     }
     .section2-products {
         flex: 4;
-    }
-    .product-card {
-        width: 260px;
-        height: 290px;
-    }
-    .product-image {
-        width: 230px;
-        height: 260px;
-    }
-    .product-info {
-        width: 230px;
     }
     #section2 .row {
         gap: 25px;
@@ -233,17 +210,6 @@
     .section2-products {
         flex: 3;
     }
-    .product-card {
-        width: 250px;
-        height: 280px;
-    }
-    .product-image {
-        width: 220px;
-        height: 250px;
-    }
-    .product-info {
-        width: 220px;
-    }
     #section2 .row {
         gap: 20px;
         padding: 0 20px;
@@ -256,17 +222,6 @@
     }
     .section2-products {
         flex: 2;
-    }
-    .product-card {
-        width: 220px;
-        height: 250px;
-    }
-    .product-image {
-        width: 190px;
-        height: 220px;
-    }
-    .product-info {
-        width: 190px;
     }
     #section2 .row {
         gap: 15px;
