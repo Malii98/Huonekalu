@@ -39,12 +39,21 @@
     width: 270px;
     height: 300px;
     overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 #section2 .row {
@@ -69,8 +78,8 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 #section2 .row {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .section2-products-header {
@@ -119,7 +128,7 @@
     background-image: url('images/alex-konokh-qAyGe-JJb8U-unsplash\ 1.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    display: flex 1;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -155,7 +164,7 @@
     }
 
     .section2-image, .section2-products {
-        flex: row;
+        flex: 1;
         width: 100%;
         min-height: 400px;
     }
