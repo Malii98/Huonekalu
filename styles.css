@@ -71,6 +71,16 @@ body {
     color: #3d5512;
    }
 
+   .navbar-nav.navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+   }
+
+   .navbar-nav.navbar-right li {
+    margin-right: 10px;
+   }
+
    .navbar-nav.navbar-right li a {
     margin-right: 10px;
     font-size: 20px;
@@ -137,5 +147,4 @@ body {
     padding-top: 10px;
    }
 
-
-  
+   
