@@ -1,29 +1,9 @@
 .col-md-4 {
     padding: 0;
     flex-shrink: 0;
-    flex-basis: auto;
     width: 300px;
     position: relative;
 }
-
-.product-info {
-    color: white;
-    padding: 15px 0;
-    text-align: left;
-    width: 270px;
-    margin-top: -15px;
-}
-
-.product-info h3 {
-    margin-top: 10px;
-    font-size: 18px;
-    color: white;
-}
-
-.product-info p {
-    color: #e0e0e0;
-}
-
 .rectangle-container {
     position: absolute;
     left: -40px;
@@ -42,6 +22,26 @@
     left: 50%;
     transform: translate(-50%, -50%);
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.product-info {
+    color: white;
+    padding: 15px 0;
+    text-align: left;
+    width: 270px;
+    margin-top: -15px;
+    font-size: 8px;
+}
+
+.product-info h3 {
+    margin-top: 10px;
+    font-size: 8px;
+    color: white;
+}
+
+.product-info p {
+    color: #e0e0e0;
+    font-size: 12px;
 }
 
 .product-card {
@@ -88,7 +88,6 @@
     overflow-x: auto;
     flex-wrap: nowrap;
     padding: 0 40px;
-    max-height: 100%;
     display: flex;
     gap: 30px;
     justify-content: flex-start;
@@ -120,6 +119,7 @@
     font-weight: bold;
     display: inline-block;
     text-align: left;
+    font-size: 36px;
 }
 
 .product-link {
@@ -130,6 +130,11 @@
     font-weight: bold;
     text-align: left;
     padding: 0;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 270px;
 }
 
 .product-link:hover {
@@ -157,8 +162,6 @@
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 800px;
     position: relative;
 }
@@ -197,10 +200,10 @@
 @media screen and (min-width: 1341px) {
     .section2-image {
         flex: none;
-        width: 500px; /* Fixed width for larger screens */
+        width: 500px; 
     }
     .section2-products {
-        flex: 1; /* Take remaining space */
+        flex: 1; 
     }
 }
 
@@ -278,6 +281,9 @@
     .product-card {
         height: calc(100vh - 400px);
     }
+    .rectangle-container {
+        height: calc(100vh - 400px);
+    }
 }
 
 @media screen and (max-height: 600px) {
@@ -287,16 +293,6 @@
     .product-image {
         height: 220px;
     }
-}
-
-/* Add media queries to match product-card height changes */
-@media screen and (max-height: 800px) {
-    .rectangle-container {
-        height: calc(100vh - 400px);
-    }
-}
-
-@media screen and (max-height: 600px) {
     .rectangle-container {
         height: 250px;
     }
