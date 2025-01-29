@@ -14,6 +14,7 @@ body {
   #section4 {padding-top:50px;height:auto;color: #fff; background-color: transparent; position: relative; height: 100%; padding-bottom: 20px; display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;}
   /*#section42 {padding-top:50px;height:1000px;color: #fff; background-color: #009688;}  */
 
+
 header {
     background-color: #524E3D;
     width: 70vw;
@@ -32,8 +33,17 @@ header {
     padding-right: 20px;
 }
 
-.logo{
-  margin: 20px;
+.logo {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 nav {
@@ -107,7 +117,6 @@ li a{
   display: block;
   width: 100%;
 }/* End of header's css */
-
 
 #section1{
   display: flex;
@@ -258,6 +267,12 @@ li a{
         padding: 14px 12px;
         font-size: 14px;
     }
+    .logo {
+        margin: 15px;
+    }
+    .logo img {
+        max-height: 35px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -265,23 +280,23 @@ li a{
         padding: 14px 8px;
         font-size: 12px;
     }
+    .logo {
+        margin: 10px;
+    }
+    .logo img {
+        max-height: 30px;
+    }
 }
 
 @media screen and (max-width: 768px) {
     header {
         width: 85vw;
     }
-    .logo {
-        margin: 15px;
-    }
 }
 
 @media screen and (max-width: 480px) {
     header {
         width: 95vw;
-    }
-    .logo {
-        margin: 10px;
     }
 }
 
