@@ -3,10 +3,12 @@
 * {
     font-family: 'Alata', sans-serif;
 }
-
 body {
-    position: relative; 
-  }
+    position: relative;
+    padding-top: 0;
+    max-width: 1920px;
+    margin: 0 auto;
+}
   /*#section1 {padding-top:50px;height:500px;}
   #section1 {background-image: url(images/sänky.jpg);padding-top: 50px;height: 500px; color: white;}*/
   #section2 {height: auto;min-height: 600px;color: #fff;background-color: #673ab7;padding-top: 0;}
