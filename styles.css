@@ -196,6 +196,12 @@ li a{
   height: 100vh;
 }
 
+@media screen and (max-width: 768px){
+    #section1{
+        height: auto;
+    } 
+}
+
 .tietoja{
   display: flex;
   flex-direction: column;
@@ -214,6 +220,10 @@ li a{
   padding: 10px;
   border-radius: 20px;
   color: black;
+}
+
+.suomeksi{
+    margin-top: 85px;
 }
 
   #googleMap {
