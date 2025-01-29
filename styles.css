@@ -14,6 +14,60 @@ body {
   #section4 {padding-top:50px;height:auto;color: #fff; background-color: transparent; position: relative; height: 100%; padding-bottom: 20px; display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;}
   /*#section42 {padding-top:50px;height:1000px;color: #fff; background-color: #009688;}  */
 
+header{
+  background-color: #524E3D;
+  width: 70vw;
+  max-width: 1200px;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom: black solid 2px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding-right: 20px;
+}
+
+.logo{
+  margin: 20px;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  gap: 30px; 
+  flex: 1; 
+  min-width: 0; 
+  margin-left: 40px; 
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap; 
+  gap: 20px; 
+}
+
+li{
+  display: inline-flex;
+  align-items: center;
+}
+
+li a{
+  color: white;
+  text-decoration: none;
+  padding: 14px 0; 
+  text-transform: uppercase;
+  font-size: 16px; /* Base font size */
+}
+
 #section1{
   display: flex;
   padding: 0;
@@ -156,5 +210,38 @@ body {
     margin-top: 20px;
     padding-top: 10px;
    }
+
+/* header scaling */
+@media screen and (max-width: 768px) {
+    li a {
+        padding: 14px 12px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    li a {
+        padding: 14px 8px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        width: 85vw;
+    }
+    .logo {
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        width: 95vw;
+    }
+    .logo {
+        margin: 10px;
+    }
+}
 
    
