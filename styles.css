@@ -46,6 +46,13 @@ header {
     object-fit: contain;
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+}
+
 nav {
     display: flex;
     align-items: center;
