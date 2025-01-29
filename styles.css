@@ -58,11 +58,11 @@ header {
 nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     flex: 1;
     min-width: 0;
-    margin-left: 40px;
-    position: relative; /* For dropdown positioning */
+    margin-left: 20px;
+    position: relative;
 }
 
 ul{
@@ -94,38 +94,100 @@ li a{
   margin: 0 auto;
 } 
 
+/* Navigation menu styles */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap;
+    transition: all 0.3s ease;
+}
+
 .nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
 }
 
+/* Hamburger menu functionality */
+@media screen and (max-width: 1024px) {
+    .nav-toggle {
+        display: block;
+        order: -1;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #524E3D;
+        flex-direction: column;
+        padding: 10px 0;
+        border-radius: 0 0 10px 10px;
+        z-index: 1000;
+    }
+
+    .nav-toggle:hover + .nav-menu,
+    .nav-menu:hover {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu li a {
+        padding: 10px 20px;
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Progressive reduction of nav spacing */
+@media screen and (max-width: 1200px) {
+    nav { gap: 15px; }
+    .nav-menu { gap: 12px; }
+}
+
+@media screen and (max-width: 1100px) {
+    nav { gap: 10px; }
+    .nav-menu { gap: 8px; }
+}
+
+@media screen and (max-width: 1024px) {
+    nav { gap: 5px; }
+    .nav-menu { gap: 5px; }
+}
+
+/* Ensure hamburger menu shows at appropriate width */
+@media screen and (max-width: 900px) {
+    .nav-toggle {
+        display: block;
+    }
+    .nav-menu:not(.show) {
+        display: none;
+    }
+}
+
+.nav-menu.overflow {
+    display: none;
+}
+
+.nav-toggle.show-toggle {
+    display: block;
+}
+
+/* Remove old dropdown-menu styles */
 .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0; /* Align with hamburger */
-  background-color: #524E3D;
-  border-radius: 0 0 10px 10px;
-  padding: 10px 0;
-  min-width: 200px;
-  z-index: 1001; /* Above header */
+    display: none;
 }
-
-.dropdown-menu li {
-  display: block;
-  width: 100%;
-}
-
-.dropdown-menu a {
-  padding: 10px 20px;
-  display: block;
-  width: 100%;
-}/* End of header's css */
 
 #section1{
   display: flex;
@@ -270,6 +332,10 @@ li a{
     padding-top: 10px;
    }
 
+   .footer .col-md-4 {
+    padding: 15px;
+  }
+
 /* header scaling */
 @media screen and (max-width: 768px) {
     li a {
@@ -317,22 +383,35 @@ li a{
     }
 }
 
-@media screen and (max-width: 1024px) {
-    nav ul:not(.dropdown-menu):not(.navbar-right) {
-        display: none;
-    }
-    
-    .nav-toggle {
-        display: block;
-        order: -1; /* Move hamburger to start of nav */
-    }
-    
-    nav.active .dropdown-menu {
-        display: block;
-    }
-
-    nav {
-        margin-left: 20px;
-        gap: 15px;
-    }
+/* Footer responsive styles */
+@media (max-width: 768px) {
+  .footer-content {
+    display: none;
+  }
+  
+  .footer-toggle {
+    float: right;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    padding: 0 10px;
+  }
+  
+  .footer h5 {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
 }
+
+@media (min-width: 769px) {
+  .footer-toggle {
+    display: none;
+  }
+  
+  .footer-content {
+    display: block !important;
+  }
+}
+
